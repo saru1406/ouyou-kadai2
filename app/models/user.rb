@@ -37,7 +37,7 @@ has_many :followers, through: :reverse_of_relationships, source: :follower
   def following?(user)
   followings.include?(user)
   end
-  
+
   def self.looks(search, word)
     if search == "perfect_match"
       @user = User.where("name LIKE?", "#{word}")
